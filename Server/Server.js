@@ -1,0 +1,62 @@
+import express from "express";
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get("/api/patient" , (req,res) => {
+       const PatientData = [
+        {
+            Title: "Patient Details",
+            Name: "Rahul Singh",
+            Age: 27,
+            Address: "Patna",
+            Diagnosis: "Migraine",
+            DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
+            TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+        }
+       ]
+       res.send(PatientData)
+})
+
+app.get("/api/medicine" , (req,res) => {
+    const MedicineData = [
+     {
+         Title: "Medicine Data",
+         FirstMed: "Sumatriptan  (Brand: Suminat, Imitrex)",
+         SecondMed: "Rizatriptan (Brand: Maxalt)",
+         ThirdMed: "Naproxen (Brand: Naprosyn, Aleve)",
+         FourthMed: "Propranolol (Brand: Inderal)",
+         FifthMed: "Topiramate (Brand: Topamax)",
+         Diagnosis: "Migraine",
+         DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
+         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+     }
+    ]
+    res.send(MedicineData)
+})
+
+app.get("/api/totalbill" , (req,res) => {
+    const TotalBill = [
+     {
+         Title: "Total Medical Bill",
+         Consultation: "Dr'Mayank Mishra",
+         Fee: "Rs 1000",
+         Diagnosis: "Dr'Prabhat Singh",
+         Fee: "Rs 1500",
+         FirstMed: "Sumatriptan  (Rs 120)",
+         SecondMed: "Rizatriptan (Rs 100)",
+         ThirdMed: "Naproxen     (Rs 90)",
+         FourthMed: "Propranolol (Rs 80)",
+         FifthMed: "Topiramate   (Rs 99)",
+         Diagnosis: "Migraine",
+         DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
+         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+         Total: "Rs 2989"
+     }
+    ]
+    res.send(TotalBill)
+})
+
+app.listen(port , () => {
+    console.log(`server is running on https://localhost:${port}`)
+})
