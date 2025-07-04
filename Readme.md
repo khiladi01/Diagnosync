@@ -1,6 +1,6 @@
-# 🧾 MediBrief – Patient Report Web App
+# 🧾 Diagnosync – Patient Report Web App
 
-**MediBrief** is a mini full-stack web application that simulates a digital patient report system. It fetches medical data like health issues, diagnoses, prescribed medicines, and billing info using custom Express APIs and displays them in a clean, React-based frontend.
+**Diagnosync** is a mini full-stack web application that simulates a digital patient report system. It fetches medical data like health issues, diagnoses, prescribed medicines, and billing info using custom Express APIs and displays them in a clean, React-based frontend.
 
 This project showcases how a frontend app communicates with a backend server using `axios` and a `proxy` setup, while also highlighting UI/UX design skills.
 
