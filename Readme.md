@@ -19,14 +19,13 @@ This project showcases how a frontend app communicates with a backend server usi
 
 ## 🛠️ Tech Stack
 
-| Frontend      | Backend      | Tools / Misc   |
+| Frontend      | Backend      | Tools          |
 |---------------|--------------|----------------|
 | React.js      | Node.js      | Git & GitHub   |
 | Axios         | Express.js   | VS Code        |
-| React Router  | JSON data    | Postman (optional) |
-| Tailwind CSS or CSS3 |        |                |
+| React Router  | JSON data    |                |
+| Tailwind CSS or CSS3 |       |                |
 
 ---
 
-## 📁 Folder Structure
 
