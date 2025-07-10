@@ -1,7 +1,27 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Your frontend address
+  }));
+
+  app.get("/api/" , (req,res) => {
+    const PatientData = [
+     {
+         Title: "Patient Details",
+         Name: "Rahul Singh",
+         Age: 27,
+         Address: "Patna",
+         Diagnosis: "Migraine",
+         DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
+         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+     }
+    ]
+    res.send(PatientData)
+})
 
 app.get("/api/patient" , (req,res) => {
        const PatientData = [
@@ -58,5 +78,5 @@ app.get("/api/totalbill" , (req,res) => {
 })
 
 app.listen(port , () => {
-    console.log(`server is running on https://localhost:${port}`)
+    console.log(`server is running on http://localhost:${port}`)
 })

@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import 'boxicons/css/boxicons.min.css';
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
+import "../Style/nav.css";
 
 // Lazy load effect on Tablet & Mobile -->
 const MobileMenu = lazy(() => Promise.resolve({
@@ -13,14 +14,18 @@ const MobileMenu = lazy(() => Promise.resolve({
       {["/", "/patient", "/medicine", "/totalbill"].map((path, index) => {
         const names = ["➢ Home", "➢ Patient", "➢ Medicine", "➢ Bill"];
         return (
-          <Link
+          <NavLink
             key={index}
             to={path}
-            className="w-full flex justify-start py-4 pl-[10px] text-cyan-300 hover:text-cyan-400 transition-all duration-150"
+            className={({ isActive }) =>
+              `w-full flex justify-start py-4 pl-[10px] bg-gradient-to-r from-cyan-400 via-rose-400 to-purple-400 transition-all duration-150 ${
+                isActive ? "text-gray-200 font-semibold" : "hover:text-gray-200"
+              }`
+            }
             onClick={handleCloseMenu}
           >
             {names[index]}
-          </Link>
+          </NavLink>
         );
       })}
     </div>
@@ -53,13 +58,13 @@ function Nav() {
   // Handle menu close with animation and fallback
   const handleCloseMenu = () => {
     setClosing(true);
-    // Fallback: force close after 400ms if animationend doesn't fire
     if (closeTimeout.current) clearTimeout(closeTimeout.current);
     closeTimeout.current = setTimeout(() => {
       setMenuOpen(false);
       setClosing(false);
     }, 400);
   };
+
   const handleMenuButton = () => {
     if (menuOpen) {
       handleCloseMenu();
@@ -68,8 +73,8 @@ function Nav() {
       setClosing(false);
     }
   };
+
   const handleAnimationEnd = () => {
-    console.log('Animation ended');
     if (closeTimeout.current) clearTimeout(closeTimeout.current);
     if (closing) {
       setMenuOpen(false);
@@ -79,32 +84,38 @@ function Nav() {
 
   return (
     <>
-      <div className="h-[70px] w-full bg-gradient-to-r from-slate-950 via-purple-700 to-slate-950 flex justify-between items-center shadow-sm shadow-white sticky top-0 select-none px-4 md:px-8">
+      <div className="h-[100px] w-full bg-gradient-to-r from-slate-950 via-purple-700 to-slate-950 flex justify-between items-center shadow-sm shadow-gray-500 sticky top-0 select-none px-4 md:px-8 z-[9999]">
+        
         {/* Site Name */}
         <div className="w-auto md:w-[300px] h-[70px] flex justify-center items-center">
-          <p className="px-4 py-1 md:w-full md:h-[40px] flex justify-center items-center rounded-full bg-gradient-to-r from bg-slate-950 to-pink-700 text-white text-xl md:text-2xl font-normal text-center" title="Site Name">
+          <p id="mainname" className="px-4 py-1 md:w-full md:h-[40px] flex justify-center items-center bg-gradient-to-r from-slate-950 to-cyan-700 rounded-full text-white text-xl md:text-2xl font-normal text-center" title="Site Name">
             ＤｉａｇｎｏＳｙｎｃ
           </p>
         </div>
 
-        {/* Site Links */}
+        {/* Desktop Site Links */}
         <div className="hidden md:flex w-[450px] h-[70px] justify-start items-center">
           {["/", "/patient", "/medicine", "/totalbill"].map((path, index) => {
             const names = ["Home", "Patient", "Medicine", "Bill"];
             return (
-              <Link
+              <NavLink
                 key={index}
-                className="w-[100px] flex justify-center items-center text-cyan-300 text-sm hover:text-cyan-400 font-normal
-                hover:rounded-full hover:shadow-lg hover:shadow-cyan-400 hover:drop-shadow-[0_0_10px_#00ffff] transition-all ease-in-out duration-200"
                 to={path}
+                className={({ isActive }) =>
+                  `w-[100px] flex justify-center items-center text-[15px] tracking-wide font-normal transition-all ease-in-out duration-200 ${
+                    isActive
+                      ? "text-cyan-400 rounded-full shadow-lg shadow-purple-500 drop-shadow-[0_0_10px_purple]"
+                      : "text-cyan-300 hover:text-cyan-400 hover:rounded-full hover:shadow-lg hover:shadow-cyan-400 hover:drop-shadow-[0_0_10px_#00ffff]"
+                  }`
+                }
               >
                 {names[index]}
-              </Link>
+              </NavLink>
             );
           })}
         </div>
 
-        {/* Hamburger/Cross Icon for Mobile/Tablet */}
+        {/* Hamburger Icon */}
         <div className="md:hidden flex items-center">
           <button
             className="text-white text-3xl focus:outline-none transition-transform duration-300"
@@ -118,7 +129,7 @@ function Nav() {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu with Lazy Load and Animation */}
+        {/* Mobile Dropdown */}
         <Suspense fallback={null}>
           {menuOpen && (
             <MobileMenu
@@ -131,17 +142,17 @@ function Nav() {
         </Suspense>
 
         {/* User Profile */}
-        <div className="w-auto md:w-[300px] h-[70px] flex justify-center items-center">
-          <div className="w-[50px] h-full">
-            <Link
+        <div className="w-auto md:w-[260px] h-[70px] flex justify-center items-center">
+          <div className="w-[40px] h-[40px] border-[2px] border-cyan-400 rounded-full">
+            <NavLink
               className="h-full w-full flex justify-center items-center hover:text-gray-400 transition-all ease-in-out duration-200"
               to="/"
             >
               <i
-                className="bx bx-user text-lg hover:text-pink-400 cursor-pointer text-white transition-all ease-in-out duration-200"
+                className="bx bx-user text-lg hover:text-cyan-400 cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-rose-400 to-purple-400 transition-all ease-in-out duration-200"
                 title="Profile"
               ></i>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
