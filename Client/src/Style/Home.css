@@ -1,5 +1,5 @@
 #herosec{
-    background-image: url('../assets/Home/Home-Bg-Img.png');
+    background-image: url('../assets/Home/Medical-Home-BG-img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Adjust darkness here */
+    background: rgba(0, 0, 0, 0.7); /* Adjust darkness here */
     z-index: 0; /* Lower than navbar */
 }
 
@@ -25,17 +25,17 @@
 }
 
 #scsecone{
-    box-shadow: inset 0 0 5px #212121;
+    box-shadow: inset 0 0 15px #818181;
 }
 #scsecone:hover{
     box-shadow: inset 0 0 25px #fff;
 }
 
 #scsectwo{
-    box-shadow: inset 0 0 5px #fff;
+    box-shadow: inset 0 0 10px #fff;
 }
 
 #scsectwo:hover{
-    box-shadow: inset 0 0 25px #212121;
+    box-shadow: inset 0 0 25px #fff;
 }
 
