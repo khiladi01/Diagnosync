@@ -146,7 +146,7 @@ function Nav() {
           <div className="w-[40px] h-[40px] border-[2px] border-cyan-400 rounded-full">
             <NavLink
               className="h-full w-full flex justify-center items-center hover:text-gray-400 transition-all ease-in-out duration-200"
-              to="/"
+              to="/Account"
             >
               <i
                 className="bx bx-user text-lg hover:text-cyan-400 cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-rose-400 to-purple-400 transition-all ease-in-out duration-200"

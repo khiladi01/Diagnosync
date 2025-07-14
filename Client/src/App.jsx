@@ -6,6 +6,7 @@ import Home from "./Page/Home";
 import Patient from "./Page/Patient"
 import Medicine from "./Page/Medicine";
 import Totalbill from "./Page/TotalBill";
+import Account from "./Page/Account"
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
       <Route path="/patient" element={<Patient />} />
       <Route path="/medicine" element={<Medicine />} />
       <Route path="/totalbill" element={<Totalbill />} />
+      <Route path="/account" element={<Account />} />
 
       </Routes>
 
