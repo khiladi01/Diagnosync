@@ -1,19 +1,25 @@
 {
   "name": "mini-full-stack-project",
   "version": "1.0.0",
-  "description": "Diagnosync A Mini Full Stack Project",
-  "main": " \"server/server.js\"",
+  "description": "Diagnosync - A Mini Full Stack Project",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "client": "npm run build --prefix client",
+    "build": "npm run build --prefix client"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khiladi01/Diagnosync-A-Medical-Report-apk.git"
+    "url": "https://github.com/khiladi01/Diagnosync-A-Medical-Report-apk.git"
   },
   "keywords": [
-    "MERN"
+    "MERN",
+    "React",
+    "Express",
+    "FullStack",
+    "Medical Dashboard"
   ],
-  "author": "Er'Raushan Raj",
+  "author": "Er. Raushan Raj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/khiladi01/Diagnosync-A-Medical-Report-apk/issues"
