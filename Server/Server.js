@@ -2,26 +2,11 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //localhost 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Your frontend address
+    origin: 'http://localhost:5173', // our frontend address its use when develop a MPA...
   }));
-
-  app.get("/api/" , (req,res) => {
-    const PatientData = [
-     {
-         Title: "Patient Details",
-         Name: "Rahul Singh",
-         Age: 27,
-         Address: "Patna",
-         Diagnosis: "Migraine",
-         DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
-         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
-     }
-    ]
-    res.send(PatientData)
-})
 
 app.get("/api/patient" , (req,res) => {
        const PatientData = [
@@ -30,9 +15,11 @@ app.get("/api/patient" , (req,res) => {
             Name: "Rahul Singh",
             Age: 27,
             Address: "Patna",
+            Mobile: 9956214578,
+            Email: "rahul121@gmail.com",
             Diagnosis: "Migraine",
             DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
-            TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+            TreatmentBy: "Dr'Surbhi Mishra (MBBS)",
         }
        ]
        res.send(PatientData)
@@ -49,7 +36,7 @@ app.get("/api/medicine" , (req,res) => {
          FifthMed: "Topiramate (Brand: Topamax)",
          Diagnosis: "Migraine",
          DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
-         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+         TreatmentBy: "Dr'Surbhi Mishra (MBBS)",
      }
     ]
     res.send(MedicineData)
@@ -59,7 +46,7 @@ app.get("/api/totalbill" , (req,res) => {
     const TotalBill = [
      {
          Title: "Total Medical Bill",
-         Consultation: "Dr'Mayank Mishra",
+         Consultation: "Dr'Surbhi Mishra",
          Fee: "Rs 1000",
          Diagnosis: "Dr'Prabhat Singh",
          Fee: "Rs 1500",
@@ -70,7 +57,7 @@ app.get("/api/totalbill" , (req,res) => {
          FifthMed: "Topiramate   (Rs 99)",
          Diagnosis: "Migraine",
          DiagnosisBy: "Dr'Prabhat Singh (MBBS)",
-         TreatmentBy: "Dr'Mayank Mishra (MBBS)",
+         TreatmentBy: "Dr'Surbhi Mishra (MBBS)",
          Total: "Rs 2989"
      }
     ]
