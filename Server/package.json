@@ -2,14 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Medical Mini Full Stack Project",
-  "main": "Server.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [
-    "MERN"
-  ],
+  "keywords": ["MERN"],
   "author": "Er'Raushan Raj",
   "license": "ISC",
   "dependencies": {
