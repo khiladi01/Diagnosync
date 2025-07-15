@@ -4,9 +4,7 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT || 3000; //localhost 
 
-app.use(cors({
-    origin: 'http://localhost:5173', // our frontend address its use when develop a MPA...
-  }));
+app.use(cors());
 
 app.get("/api/patient" , (req,res) => {
        const PatientData = [
