@@ -4,11 +4,22 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT || 3000; //localhost 
 
-app.use(cors({
-    origin: 'https://diagnosync-2.onrender.com',
+const allowedOrigins = [
+    'http://localhost:5173', // local dev
+    'https://diagnosync-2.onrender.com' // 👈 your live frontend
+  ];
+
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true
   }));
-  ;
+  
 
 app.get("/api/patient" , (req,res) => {
        const PatientData = [
