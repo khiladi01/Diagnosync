@@ -4,9 +4,6 @@
   "description": "Medical Mini Full Stack Project",
   "main": "Server.js",
   "type": "module",
-  "scripts": {
-    "start": "node server.js"
-  },
   "keywords": [
     "MERN"
   ],
