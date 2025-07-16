@@ -10,7 +10,7 @@ function Medicine() {
   const [data , setData] = useState()
 
   useEffect(() => {
-    axios.get('').
+    axios.get('https://diagnosync.onrender.com/api/medicine').
     then((response) => {
       setData(response.data)
     })

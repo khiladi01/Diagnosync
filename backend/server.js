@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000; //localhost 
 
 app.use(cors({
-    origin: '', // our frontend address its use when develop a MPA...
+    origin: 'https://diagnosync-2.onrender.com', // our frontend address its use when develop a MPA...
   }));
 
 app.get("/api/patient" , (req,res) => {

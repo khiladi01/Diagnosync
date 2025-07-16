@@ -10,7 +10,7 @@ function Account (){
     const[data , setData] = useState()
 
     useEffect(() => {
-        axios.get("")
+        axios.get("https://diagnosync.onrender.com/api/patient")
         .then((response) => {
         setData(response.data)
         }) 
