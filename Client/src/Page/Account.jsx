@@ -10,7 +10,7 @@ function Account (){
     const[data , setData] = useState()
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/patient")
+        axios.get("")
         .then((response) => {
         setData(response.data)
         }) 

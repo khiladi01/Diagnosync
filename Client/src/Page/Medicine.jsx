@@ -10,7 +10,7 @@ function Medicine() {
   const [data , setData] = useState()
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/medicine').
+    axios.get('').
     then((response) => {
       setData(response.data)
     })

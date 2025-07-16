@@ -10,7 +10,7 @@ function Totalbill() {
   const [data , setData] = useState()
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/totalbill').
+    axios.get('').
     then((response) => {
       setData(response.data)
     })
