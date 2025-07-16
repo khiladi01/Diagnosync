@@ -10,7 +10,7 @@ function Account (){
     const[data , setData] = useState()
 
     useEffect(() => {
-        axios.get("https://diagnosync.onrender.com/api/patient")
+        axios.get(`${import.meta.env.VITE_API_URL}/api/patient`)
         .then((response) => {
         setData(response.data)
         }) 
